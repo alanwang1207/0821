@@ -7,13 +7,24 @@
 <body>
 <?php
 $doc = new DOMDocument();
-$doc->Load('employees.xml');
+$doc->Load('employees.xml');//將xml檔案load到doc物件
 $xpath = new DOMXPath($doc);
 $entries = $xpath->query("/employees/employee/@EmpType");
+
+$last = $xpath->query("/employees/employee[1]/lastName");
+echo "last：" . $last->nodeValue . "<br>";
+// header()
+// 
+
 foreach ($entries as $entry) 
 {
+   // $last = $xpath->query("/employees/employee/lastName ");
    echo "結果：" . $entry->nodeValue . "<br>";
+   // $last = $xpath->query("/employees/employee[0]");
+   
+   // echo "last：" . $last->nodeValue . "<br>";
 }
+
 ?>
 
 </body>

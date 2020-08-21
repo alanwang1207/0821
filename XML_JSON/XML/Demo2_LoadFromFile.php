@@ -8,7 +8,7 @@
 View html souce please: <HR>
 <?php
 $doc = new DOMDocument();
-$doc->load("employees.xml");
+$doc->load("employees.xml");//接檔名 可直接送xml 不必設定瀏覽器標頭
 echo $doc->c14n();
 ?>
 

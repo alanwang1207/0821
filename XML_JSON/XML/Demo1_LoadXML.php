@@ -27,6 +27,6 @@ MultiLines;
 
 $doc = new DOMDocument();  
 $doc->loadXML($xmlString); 
-header("Content-type: text/xml", true);
-echo $doc->c14n();
+header("Content-type: text/xml", true);//告訴瀏覽器送的資料是xml
+echo $doc->c14n(); //規範化轉換 (不包含註解)
 ?>
